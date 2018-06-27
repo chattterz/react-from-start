@@ -58,7 +58,7 @@ const interfere = (first, second) => {
       second.from.getTime();
 };
 
-employeTwo
+employeOne
     .workHistory
     .map(({from, to}) => {
       return {
@@ -77,7 +77,11 @@ employeTwo
           acc.push(currentValue);
       }
       return acc;
-    }, []);
+    }, [])
+    .reduce((acc, currentValue) => {
+        return acc + (((currentValue.to.getFullYear() - currentValue.from.getFullYear()) * 12)
+            + currentValue.to.getMonth() - currentValue.from.getMonth())
+    }, 0);
 
 
 
