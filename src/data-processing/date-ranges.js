@@ -1,5 +1,3 @@
-import 'ramda'
-
 const messages = [
   { author: 'Diana', msg: 'Hello guys, how you doooin?',
     date: new Date(2018, 6, 27, 10, 24), },
@@ -28,4 +26,10 @@ const messages = [
   { author: 'Justin', msg: 'Plsss, what was that tune Diana played last night?',
     date: new Date(2016, 3, 8, 22), },
 
-]
+];
+
+const dateLimit = new Date(2015, 0, 1);
+
+const filteredMessages = messages.filter(x=>(x.date > dateLimit && x.date < new Date()));
+
+console.log(filteredMessages)
