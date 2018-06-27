@@ -44,4 +44,10 @@ const employeTwo = {
   ]
 }
 
+const stringToDate = date => {
+  const [ month, year ] = date.split('-')
+
+  return new Date(Number(year), Number(month) - 1)
+}
+
 const employees = [ employeOne, employeTwo ]

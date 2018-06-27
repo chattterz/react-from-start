@@ -36,4 +36,3 @@ const messagesWithSince = messages.map(message => ({
   isPresentDay: isPresentDay(message.date)
 }))
 console.log(messagesWithSince)
-
