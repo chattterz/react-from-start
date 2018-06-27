@@ -23,5 +23,7 @@ messages.map((x) => {
   return {
       ...x,
       isTheSameYear: x.year === currentDate.getFullYear(),
+      isTheSameMonth: x.month === currentDate.getMonth(),
+      isTheSameMonthDay: x.monthDay === currentDate.getDate(),
   }
 });
