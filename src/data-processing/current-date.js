@@ -23,4 +23,10 @@ var mappedMessages = messages.map(addFieldSinceNow)
          monthDay: x.date.getDate() }
     ))
 messagesWithDateInfo.map(
-  x => ({ ...x, sameYear: x.year == currentDate.getFullYear() }))
+  x => (
+    { ...x,
+       sameYear: x.year == currentDate.getFullYear(),
+       sameMonth: x.month == currentDate.getMonth(),
+       sameDay: x.monthDay == currentDate.getDate()
+       }
+  ))
