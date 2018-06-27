@@ -10,3 +10,18 @@ const messages = [
   { author: 'Maria', msg: `Well, I'd like a cookie :(`,
     date: new Date(2018, 6, 27, 10, 29, 30), },
 ]
+
+const currentDate = new Date();
+
+messages.map((x) => {
+    return {...x,
+        year: x.date.getFullYear(),
+        month: x.date.getMonth(),
+        monthDay: x.date.getDate(),
+    };
+}).map((x) => {
+  return {
+      ...x,
+      isTheSameYear: x.year === currentDate.getFullYear(),
+  }
+});
