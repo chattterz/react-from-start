@@ -29,3 +29,11 @@ const messages = [
     date: new Date(2016, 3, 8, 22), },
 
 ]
+
+
+var filteredMessages = 
+  messages.filter(
+    (element) => 
+    element.date.getTime() >= new Date(2015, 1, 1, 0).getTime() && 
+    element.date.getTime() <= new Date().getTime()
+  );
