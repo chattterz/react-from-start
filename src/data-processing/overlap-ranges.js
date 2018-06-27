@@ -55,7 +55,7 @@ const stringToDate = date => {
   return new Date(Number(year), Number(month) - 1)
 }
 
-const withDates = rangesToDates(employeTwo)
+const withDates = rangesToDates(employeTwo.workHistory)
 
 withDates.sort((a, b) => a.from.getTime() > b.from.getTime())
 
