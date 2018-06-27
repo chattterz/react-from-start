@@ -44,6 +44,7 @@ const employeTwo = {
   ]
 }
 
+
 const rangesToDates = history => history.map(
   ({ from, to }) => ({ from: stringToDate(from), to: stringToDate(to) })
 )
@@ -53,5 +54,9 @@ const stringToDate = date => {
 
   return new Date(Number(year), Number(month) - 1)
 }
+
+const withDates = rangesToDates(employeTwo)
+
+withDates.sort((a, b) => a.from.getTime() > b.from.getTime())
 
 const employees = [ employeOne, employeTwo ]
