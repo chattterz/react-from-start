@@ -30,4 +30,4 @@ const messages = [
 
 ]
 
-const since2015 = messages.filter(x => x.date.getFullYear() >= 2015);
+const since2015 = messages.filter(x => (x.date.getFullYear() >= 2015) && (x.date.getTime() < new Date().getTime()) );
