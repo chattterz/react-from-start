@@ -30,6 +30,6 @@ const messages = [
 
 const dateLimit = new Date(2015, 0, 1);
 
-const filteredMessages = messages.filter(x=>(x.date > dateLimit && x.date < new Date()));
+const filteredMessages = messages.filter(x=>(x.date.getTime() > dateLimit.getTime() && x.date.getTime() < new Date().getTime()));
 
 console.log(filteredMessages)
