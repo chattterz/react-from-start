@@ -11,22 +11,16 @@ const messages = [
     date: new Date(2018, 6, 27, 10, 29, 30), },
 ]
 
-var date = new Date();
+let currentDate  = new Date()
 
-var messagesWithDateInfo = messages.map(
-  (element) => ({
-    ...element, 
-    year: element.date.getFullYear(), 
-    month: element.date.getMonth() + 1, 
-    day: element.date.getDate() 
-  })
-);
-
-messagesWithDateInfo = messagesWithDateInfo.map(
-  element => ({
-    ...element, 
-    isYearOK: date.getFullYear() === element.year,
-    isMonthOK: date.getMonth() === element.month,
-    isDayOK: date.getDate() === element.day 
-  })
-);
+messages.map(x => ({
+    ...x,
+    currentYear: x.date.getFullYear(),
+    currentMonth: x.date.getMonth(),
+    currentDay: x.date.getDate(),
+})).map(x => ({
+    ...x,
+    isSameYear: x.date.getFullYear() === currentDate.getFullYear(),
+    isSameMonth: x.date.getMonth() === currentDate.getMonth(),
+    isSameDay: x.date.getDate() === currentDate.getDate(),
+}));
