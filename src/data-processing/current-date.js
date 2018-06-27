@@ -20,9 +20,8 @@ var messagesWithDateInfo = messages.map(
     month: element.date.getMonth() + 1, 
     day: element.date.getDate() 
   })
-);
-
-messagesWithDateInfo = messagesWithDateInfo.map(
+)
+.map(
   element => ({
     ...element, 
     isYearOK: () => currentDate.getFullYear() === element.year,
