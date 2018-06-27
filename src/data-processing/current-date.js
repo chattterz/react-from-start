@@ -10,3 +10,23 @@ const messages = [
   { author: 'Maria', msg: `Well, I'd like a cookie :(`,
     date: new Date(2018, 6, 27, 10, 29, 30), },
 ]
+
+var date = new Date();
+
+var messagesWithDateInfo = messages.map(
+  (element) => ({
+    ...element, 
+    year: element.date.getFullYear(), 
+    month: element.date.getMonth() + 1, 
+    day: element.date.getDate() 
+  })
+);
+
+messagesWithDateInfo = messagesWithDateInfo.map(
+  element => ({
+    ...element, 
+    isYearOK: date.getFullYear() === element.year,
+    isMonthOK: date.getMonth() === element.month,
+    isDayOK: date.getDate() === element.day 
+  })
+);
