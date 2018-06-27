@@ -44,6 +44,10 @@ const employeTwo = {
   ]
 }
 
+const rangesToDates = history => history.map(
+  ({ from, to }) => ({ from: stringToDate(from), to: stringToDate(to) })
+)
+
 const stringToDate = date => {
   const [ month, year ] = date.split('-')
 
