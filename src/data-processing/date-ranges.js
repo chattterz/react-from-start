@@ -29,3 +29,12 @@ const messages = [
     date: new Date(2016, 3, 8, 22), },
 
 ]
+
+let currentDate = new Date();
+
+messages.map(x => ({
+    ...x,
+    currentYear: x.date.getFullYear(),
+    currentMonth: x.date.getMonth(),
+    currentDay: x.date.getDate(),
+})).filter(x => x.currentYear >=2015 && x.date.getTime() <= currentDate.getTime());
