@@ -29,3 +29,5 @@ const messages = [
     date: new Date(2016, 3, 8, 22), },
 
 ]
+
+const since2015 = messages.filter(x => x.date.getFullYear() >= 2015);
