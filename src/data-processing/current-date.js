@@ -11,7 +11,7 @@ const messages = [
     date: new Date(2018, 6, 27, 10, 29, 30), },
 ]
 
-var date = new Date();
+var currentDate = new Date();
 
 var messagesWithDateInfo = messages.map(
   (element) => ({
@@ -25,8 +25,8 @@ var messagesWithDateInfo = messages.map(
 messagesWithDateInfo = messagesWithDateInfo.map(
   element => ({
     ...element, 
-    isYearOK: date.getFullYear() === element.year,
-    isMonthOK: date.getMonth() === element.month,
-    isDayOK: date.getDate() === element.day 
+    isYearOK: () => currentDate.getFullYear() === element.year,
+    isMonthOK: () => currentDate.getMonth() === element.month,
+    isDayOK: () => currentDate.getDate() === element.day
   })
 );
